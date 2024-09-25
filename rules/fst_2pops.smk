@@ -23,10 +23,6 @@ wFstAll =  ["wFst_" + s[0] + "_" + s[1] for s in list(itertools.combinations(SUP
 rule all:
     input:
         expand(os.path.join(OUTDIR,"saf-100kb/{postQC}/{pairSamples}.slidingwindow"),pairSamples=COMSUPER,postQC=['postQC']),# 'postQC-p1'
-        #expand(os.path.join(config['outSel'],"saf/{postQC}/plots/Fst_PBS.{allPairs}.png"), allPairs=allSuper,postQC='postQC-p1'), 
-        # expand(os.path.join(config['outSel'],"saf/{postQC}/topRegions/PBS_{popi}.{window}kb.tsv"),postQC='postQC-p1', window=50, popi= SUPERPOPS[1]),
-        #expand(os.path.join(config['outSel'],"saf/{postQC}/annRegions/{annsource}/{fullpopi}.{window}kb{pc}.genes.tsv"),postQC='postQC-p1',pc='.9995',annsource="dnazoo",window=50, fullpopi = pbsAll), # fullpopi = pbsAll wFstAll
-        #expand(os.path.join(config['outSel'],"saf-100kb{postQC}/plots/man.{fullpopi}.{window}kb{pc}.png"), postQC='postQC-p1',pc='.9995',window=100, fullpopi = pbsAll)
 
 rule saf_angsd:
     input:
